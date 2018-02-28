@@ -50,7 +50,7 @@ func worker(index int, t *testing.T, c *counter, b *Barrier, wg *sync.WaitGroup)
         b.Wait();
         c.Inc();
         b.Wait();
-        t.Logf("Worker #%d: %d\n", index, c.Get());
+        t.Logf("Worker #%d: %d\n", index, c.Get()); // Expected output: 3,3,3, 6,6,6, 9,9,9
     }
     
     wg.Done();
